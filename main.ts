@@ -474,14 +474,13 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     sprites.destroy(SS, effects.spray, 500)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    sprites.destroy(Monster)
-    info.changeLifeBy(-1)
+	
 })
 let Hilter: Sprite = null
 let SS: Sprite = null
-let Reyes = 0
 let Bull: Sprite = null
 let Bull2: Sprite = null
+let Reyes = 0
 let Monster = 0
 let mySprite: Sprite = null
 scene.setBackgroundImage(img`
@@ -620,20 +619,20 @@ for (let index = 0; index < 12; index++) {
     pause(2000)
     Monster.follow(mySprite, 20)
 }
+for (let index = 0; index < 20; index++) {
+    pause(20000)
+    Reyes = sprites.create(assets.image`Reyes`, SpriteKind.Enemy)
+    Reyes.setPosition(randint(0, 500), 62)
+    Reyes.setVelocity(50, 50)
+    pause(2000)
+    Reyes.setVelocity(randint(45, -45), randint(45, -45))
+}
 forever(function () {
     pause(500)
     info.changeScoreBy(1)
 })
 forever(function () {
 	
-})
-forever(function () {
-    pause(20000)
-    Reyes = sprites.create(assets.image`Reyes`, SpriteKind.Enemy)
-    Reyes.setPosition(randint(0, 500), 62)
-    mySprite.setVelocity(randint(45, -45), randint(45, -45))
-    pause(2000)
-    Reyes.follow(mySprite, 46)
 })
 forever(function () {
 	
